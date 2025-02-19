@@ -6,19 +6,23 @@ jobs:
       [self-hosted, ubuntu-22.04, ARM64]
     steps:
       - name: ubuntu-latest-arm64
-        run: |
-          echo "ubuntu-latest arm64"
-          lsb_release -a
-          lscpu
+        run: echo "ubuntu-latest arm64"
+      - name: lsb_release -a
+        run: lsb_release -a
+      - name: sudo lscpu
+        run: sudo lscpu
 
   Ubuntu-ARM64-GPU:
     runs-on:
       [self-hosted, ubuntu-22.04, ARM64]
     steps:
       - name: ubuntu-latest-arm64-gpu
-        run: |
-          echo "ubuntu-latest arm64"
-          lsb_release -a
-          lscpu
-          lshw -C display
-          lspci | grep ' VGA ' | cut -d" " -f 1 | xargs -i lspci -v -s {}
+        run: echo "ubuntu-latest arm64"
+      - name: lsb_release -a
+        run: lsb_release -a
+      - name: sudo lscpu
+        run: sudo lscpu
+      - name: sudo lshw -C display
+        run: sudo lshw -C display
+      - name: sudo lspci | grep ' VGA ' | cut -d" " -f 1 | xargs -i lspci -v -s {}
+        run: sudo lspci | grep ' VGA ' | cut -d" " -f 1 | xargs -i lspci -v -s {}
