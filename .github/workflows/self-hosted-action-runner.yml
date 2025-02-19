@@ -6,7 +6,7 @@ jobs:
       [self-hosted, ubuntu-22.04, ARM64]
     steps:
       - name: ubuntu-latest-arm64
-        run: 
+        run: |
           echo "ubuntu-latest arm64"
           lsb_release -a
           lscpu
@@ -16,7 +16,7 @@ jobs:
       [self-hosted, ubuntu-22.04, ARM64]
     steps:
       - name: ubuntu-latest-arm64-gpu
-        run: 
+        run: |
           echo "ubuntu-latest arm64"
           lsb_release -a
           lscpu
